@@ -7,7 +7,7 @@
   [![React.js](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://reactjs.org)
   [![Docker](https://img.shields.io/badge/docker%20-%230db7ed.svg?&style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com)
 
-  **[Live Preview]()**
+  **[Live Preview](https://jungle-devs-react-challenge.vercel.app)**
 
 </div>
 
@@ -149,4 +149,4 @@ Deploying this application to Vercel is quite simple. Follow the steps below and
 
 ---
 
-To access the live preview, you can go to the [Vercel's production deployment]().
+To access the live preview, you can go to the [Vercel's production deployment](https://jungle-devs-react-challenge.vercel.app).
