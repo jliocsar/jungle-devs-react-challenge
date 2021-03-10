@@ -29,15 +29,14 @@ ENV NODE_ENV production
 
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/next.config.js ./
-COPY --from=builder /app/src/server.js ./
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/*.pem ./
+COPY --from=builder /app/src/server.js /app/*.pem ./
 
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nextjs -u 1001
 RUN chown -R nextjs:nodejs /app/.next
-RUN chown -R nextjs:nodejs /app/*.pem
+RUN chown -R nextjs:nodejs /app/*.pem && echo "SSL copied successfully." || echo "SSL not found."
 
 USER nextjs
 
