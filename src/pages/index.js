@@ -15,8 +15,8 @@ import styles from '@styles/modules/Home.module.css'
 
 const Home = ({ experimentVariant }) => (
   <Layout
-    pageTitle="Hapu | Join a local nanny share"
-    description="Create or join a local nanny share"
+    pageTitle={experimentVariant.data.title}
+    description={experimentVariant.data.description}
   >
     <ExperimentProvider experimentVariant={experimentVariant}>
       <Hero />

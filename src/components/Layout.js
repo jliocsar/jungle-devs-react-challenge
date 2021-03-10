@@ -7,7 +7,7 @@ import Navbar from './Navbar'
 
 import useCurrentPath from '@hooks/useCurrentPath'
 
-const Layout = ({ children, pageTitle, description }) => {
+const Layout = ({ pageTitle, description, children }) => {
   const router = useRouter()
   const currentPath = useCurrentPath()
   // siteImage can be used as pageImage on each page if necessary
