@@ -17,8 +17,8 @@ RUN yarn build
 FROM node:alpine AS runner
 WORKDIR /app
 
-ARG CONTAINER_SERVER_PORT=3000
-ARG CONTAINER_HOST_PORT=443
+ARG CONTAINER_SERVER_PORT
+ARG CONTAINER_HOST_PORT
 
 # Set args as env variables so the custom server can use it
 ENV SERVER_PORT $CONTAINER_SERVER_PORT

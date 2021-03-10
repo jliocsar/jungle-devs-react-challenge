@@ -16,7 +16,8 @@ const { combinedEnv } = loadEnvConfig('./', dev)
 // constants used to start the server
 const isDocker = fs.existsSync('/.dockerenv')
 const serverPort = combinedEnv.SERVER_PORT || 3000
-const hostPort = isDocker ? combinedEnv.HOST_PORT : serverPort
+const mappedPort = combinedEnv.HOST_PORT || 443
+const hostPort = isDocker ? mappedPort : serverPort
 
 const certificatesPath = path.resolve(__dirname, `${isDocker ? '.' : '..'}/`)
 const certificatePath = `${certificatesPath}/cert.pem`
