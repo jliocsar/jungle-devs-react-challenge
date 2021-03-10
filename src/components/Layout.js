@@ -1,5 +1,6 @@
-import Head from 'next/head'
+import { useMemo } from 'react'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 import Header from './Header'
 import Footer from './Footer'
@@ -9,7 +10,11 @@ import useCurrentPath from '@hooks/useCurrentPath'
 
 const Layout = ({ pageTitle, description, children }) => {
   const router = useRouter()
-  const currentPath = useCurrentPath()
+  const deployUrl = useMemo(
+    () => (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null),
+    []
+  )
+  const currentPath = deployUrl ?? useCurrentPath()
   // siteImage can be used as pageImage on each page if necessary
   const siteImage = `${currentPath}/assets/images/primary-logo.png`
   const pageURL = `${currentPath}${router.asPath}`
